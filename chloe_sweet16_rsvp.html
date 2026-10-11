@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chloe's Sweet 16 RSVP</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500&display=swap');
+:root{--pink-bg:#f8e1e6;--lav:#77779f;--lav-dark:#69698f;--gold:#c5bd55;--pink:#fff0f2;--purple:#aaa6d3;--white:#fff9fa}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:var(--pink-bg);color:var(--lav);font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;padding:28px 16px;overflow-x:hidden}
+body:before,body:after{content:none;display:none}
+.page{display:none;width:min(760px,100%);text-align:center;animation:appear .3s ease;position:relative;z-index:1}
+.page.active{display:block}
+@keyframes appear{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.script{font-family:'Caveat',cursive;font-weight:600}
+.banner{padding:10px 10px 0;margin:0 auto 16px;max-width:900px;font-size:clamp(58px,11vw,112px);line-height:.83;color:var(--lav);letter-spacing:-2px}
+.subtitle{font-family:'Playfair Display',Georgia,serif;text-transform:uppercase;letter-spacing:1.1px;font-size:clamp(10px,2vw,15px);line-height:1.6;margin:22px auto 26px;color:var(--lav-dark)}
+.cake{width:150px;max-width:45vw;height:auto;display:block;margin:0 auto 20px}
+.btn{border:1.5px solid var(--lav);background:var(--lav);color:#fff0f2;padding:14px 27px;border-radius:4px;font-weight:700;letter-spacing:.2px;transition:.18s}
+.btn:hover{background:var(--lav-dark);transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--lav)}
+.smallcaps{font-size:11px;text-transform:uppercase;letter-spacing:3px;color:var(--lav-dark);margin-bottom:12px}
+h2{font-weight:400;font-size:clamp(38px,6vw,54px);line-height:1.1;margin:0 0 22px}
+.panel{width:min(590px,100%);margin:0 auto;border:1.5px solid var(--lav);padding:28px;border-radius:4px;text-align:left;background:#fff8fa88}
+label{display:block;font-weight:600;margin-bottom:10px;color:var(--lav-dark)}
+input[type=text]{width:100%;padding:15px 16px;background:#fffafa;color:#4f4a62;border:1.5px solid #c7bfdc;border-radius:4px;font-size:15px;outline:none}
+input[type=text]:focus{box-shadow:0 0 0 3px #77779f22}
+.searchrow{display:flex;gap:10px}
+.searchrow .btn{white-space:nowrap}
+.helper{font-size:12px;line-height:1.5;color:var(--lav-dark);margin:10px 0 24px}
+.results-title{font-family:'Caveat',cursive;font-size:31px;margin:0 0 10px}
+.result{width:100%;display:flex;align-items:center;justify-content:space-between;background:#fffafa;color:#625c70;border:1px solid #d4cde4;padding:15px 16px;margin-top:9px;text-align:left;border-radius:4px}
+.result span:last-child{color:var(--lav);font-size:22px}
+.error{color:#9a536c;font-size:13px;margin:12px 0 0}
+.invite-name{font-family:'Caveat',cursive;font-size:clamp(55px,9vw,78px);margin:0 0 4px}
+.muted{color:var(--lav-dark);line-height:1.6;margin:0 0 28px}
+.rsvp-title{font-family:'Caveat',cursive;font-size:38px;margin:0 0 17px}
+.rsvp-card{border:1.5px solid var(--lav);padding:23px;background:#fff8fa88;margin:0 auto 22px;max-width:590px;text-align:left}
+.rsvp-card h3{font-weight:600;font-size:16px;margin:0 0 15px;color:var(--lav-dark)}
+.option{display:flex;align-items:center;gap:10px;padding:9px 0;color:var(--lav-dark);cursor:pointer}
+.option input{accent-color:var(--lav);width:17px;height:17px}
+.actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+.thanks{font-family:'Caveat',cursive;font-size:clamp(48px,9vw,78px);line-height:1.05;margin:20px 0;color:var(--lav)}
+.question-card{max-width:590px;margin:0 auto 24px;border:1.5px solid var(--lav);padding:30px 22px;background:#fff8fa88}
+.question-card h2{font-family:'Caveat',cursive;font-size:clamp(38px,7vw,52px);margin-bottom:8px}
+.question-card p{color:var(--lav-dark);line-height:1.7;margin:0 0 20px}
+@media(max-width:520px){body{padding:25px 15px}.banner{font-size:clamp(55px,15vw,80px);line-height:.88}.searchrow{flex-direction:column}.searchrow .btn{width:100%}.panel{padding:20px}.rsvp-card{padding:19px}body:before,body:after{display:none}}
+</style>
+</head>
+<body>
+<section class="page active" id="home">
+  <div class="banner script">Chloe's<br>Sweet 16th!</div>
+  <div class="subtitle">You're invited to be a part of her celebration on Oct. 17</div>
+  <svg class="cake" viewBox="0 0 180 160" role="img" aria-label="Hand-drawn birthday cake with candles">
+    <g fill="none" stroke="#77779f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M25 75 Q30 60 42 68 L135 68 Q151 62 157 77 L153 126 Q90 148 28 126 Z"/>
+      <path d="M26 78 Q36 90 45 78 T64 78 T83 78 T102 78 T121 78 T156 78"/>
+      <path d="M29 98 Q40 111 50 98 T72 98 T94 98 T116 98 T153 98"/>
+      <path d="M30 121 Q40 132 49 121 T69 121 T89 121 T109 121 T129 121 T153 121"/>
+      <path d="M48 66 L48 37 M65 66 L65 29 M82 66 L82 40 M99 66 L99 25 M116 66 L116 36 M133 66 L133 30"/>
+      <path d="M45 32 Q48 25 51 32 M62 24 Q65 17 68 24 M79 35 Q82 28 85 35 M96 20 Q99 13 102 20 M113 31 Q116 24 119 31 M130 25 Q133 18 136 25"/>
+      <path d="M21 132 Q28 120 37 132 T55 132 T73 132 T91 132 T109 132 T127 132 T145 132 T160 132"/>
+      <path d="M39 71 Q49 58 60 69 T82 69 T104 69 T126 69 T145 70"/>
+    </g>
+  </svg>
+  <button class="btn" onclick="showPage('search')">Find My Invitation →</button>
+</section>
+
+<section class="page" id="search">
+  <div class="smallcaps">Your invitation</div>
+  <h2 class="script">Let's find you ♡</h2>
+  <div class="panel">
+    <label for="nameSearch">Search your name</label>
+    <div class="searchrow">
+      <input id="nameSearch" type="text" placeholder="Type your name" autocomplete="off">
+      <button class="btn" onclick="findGuest()">Find Me</button>
+    </div>
+    <p class="helper">Please enter your first name exactly as listed on your invitation.</p>
+    <div id="searchResults" hidden>
+      <p class="results-title">We found your invitation ♡</p>
+      <div id="resultList"></div>
+    </div>
+    <p id="searchError" class="error" hidden></p>
+  </div>
+</section>
+
+<section class="page" id="rsvp">
+  <div class="smallcaps">Your invitation</div>
+  <h2 class="invite-name" id="welcomeName">Hi!</h2>
+  <p class="muted">You're invited to celebrate Chloe's Sweet 16. ♡</p>
+  <div class="rsvp-card">
+    <h3 id="rsvpGuestName">Your name</h3>
+    <p class="rsvp-title">Will you be there? ♡</p>
+    <label class="option"><input type="radio" name="attendance" value="Yes, I'll be there!"> <span>Yes, I'll be there! ♡</span></label>
+    <label class="option"><input type="radio" name="attendance" value="Sadly, I can't make it"> <span>Sadly, I can't make it</span></label>
+    <p id="rsvpError" class="error" hidden></p>
+  </div>
+  <button class="btn" onclick="continueToQuestions()">Continue →</button>
+</section>
+
+<section class="page" id="questions">
+  <div class="smallcaps">One last thing</div>
+  <div class="question-card">
+    <h2>Have any questions? ♡</h2>
+    <p>Message Chloe on Facebook and she'll get back to you!</p>
+    <a class="btn" style="display:inline-block;text-decoration:none" href="https://www.facebook.com/princess.reyes.729994" target="_blank" rel="noopener noreferrer">💌 Message Chloe</a>
+  </div>
+  <button class="btn" onclick="finishRsvp()">Continue →</button>
+</section>
+
+<section class="page" id="done">
+  <div class="smallcaps">Chloe's Sweet 16</div>
+  <svg class="bow" viewBox="0 0 320 245" role="img" aria-label="Hand-drawn pink ribbon bow">
+    <g fill="none" stroke="#77779f" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M151 84 C111 63 64 28 34 47 C9 64 23 103 51 113 C80 125 119 105 151 91 C173 103 212 123 246 111 C282 99 292 61 266 43 C236 23 194 61 165 81"/>
+      <path d="M151 87 C115 75 70 44 46 57 C26 69 37 94 57 101 C85 111 121 96 151 91"/>
+      <path d="M166 87 C199 74 236 44 258 56 C278 67 267 94 245 100 C220 108 187 96 166 91"/>
+      <path d="M151 95 C136 135 103 165 88 216 L98 219 L104 235 L112 203 C124 159 147 130 160 99"/>
+      <path d="M166 96 C183 135 205 173 247 205 L238 188 L259 199 C229 166 202 137 174 94"/>
+      <path d="M148 80 C158 75 171 77 175 87 C179 97 170 105 159 103 C148 103 141 91 148 80Z" fill="#77779f"/>
+    </g>
+  </svg>
+  <h2 class="thanks">Can't wait for you to be there!</h2>
+  <p class="subline">Thank you for letting us know. See you at Chloe's Sweet 16! ♡</p>
+  <button class="btn btn-outline" onclick="showPage('home')">Back to the beginning</button>
+</section>
+
+<script>
+  // Paste your deployed Google Apps Script Web App URL here to collect RSVPs in your own Google Sheet.
+  const RSVP_ENDPOINT = "https://script.google.com/macros/s/AKfycbyOzYhTGL6Q55ALCdsI_vwfsAvaj3BXUwLIHlMeGMLCuMu8Zc9r7YXpkCeiPfr6Pw/exec";
+  const CHLOE_MESSENGER_URL = "https://www.facebook.com/princess.reyes.729994";
+  const INVITED_GUESTS = ["Kheitlin", "Precious", "Clariz", "Zarren", "Alexa", "Mikylle", "Jodette", "Jay", "Rane"];
+  let selectedGuest = "";
+
+  function showPage(id){
+    document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+    window.scrollTo({top:0,behavior:"smooth"});
+  }
+  function findGuest(){
+    const q=document.getElementById("nameSearch").value.trim().toLocaleLowerCase();
+    const err=document.getElementById("searchError"), results=document.getElementById("searchResults"), list=document.getElementById("resultList");
+    list.replaceChildren(); err.hidden=true; results.hidden=true;
+    if(!q){err.textContent="Please type your name first.";err.hidden=false;return;}
+    const matches=INVITED_GUESTS.filter(n=>n.toLocaleLowerCase()===q);
+    if(!matches.length){err.textContent="We couldn't find that name. Check the spelling or try again.";err.hidden=false;return;}
+    results.hidden=false;
+    matches.forEach(name=>{
+      const b=document.createElement("button"); b.className="result";
+      const title=document.createElement("span");title.textContent=name;
+      const arrow=document.createElement("span");arrow.textContent="→";
+      b.append(title,arrow);b.addEventListener("click",()=>openInvitation(name));list.appendChild(b);
+    });
+  }
+  document.getElementById("nameSearch").addEventListener("keydown",e=>{if(e.key==="Enter")findGuest();});
+  function openInvitation(name){
+    selectedGuest=name;
+    document.getElementById("welcomeName").textContent="Hi, "+name+"!";
+    document.getElementById("rsvpGuestName").textContent=name;
+    document.querySelectorAll('input[name="attendance"]').forEach(r=>r.checked=false);
+    document.getElementById("rsvpError").hidden=true;
+    showPage("rsvp");
+  }
+  function continueToQuestions(){
+    const chosen=document.querySelector('input[name="attendance"]:checked');
+    const err=document.getElementById("rsvpError");err.hidden=true;
+    if(!chosen){err.textContent="Please choose whether you can attend.";err.hidden=false;return;}
+    showPage("questions");
+  }
+  async function finishRsvp(){
+    const chosen=document.querySelector('input[name="attendance"]:checked');
+    if(!chosen){showPage("rsvp");return;}
+    const submission={name:selectedGuest,answer:chosen.value,submittedAt:new Date().toISOString()};
+    if(RSVP_ENDPOINT.startsWith("https://")){
+      try{
+        await fetch(RSVP_ENDPOINT,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(submission)});
+      }catch(e){
+        alert("We couldn't send your RSVP just now. Please try again.");
+        return;
+      }
+    }else{
+      // Preview mode only: without a connected endpoint, the response is saved in this browser.
+      const saved=JSON.parse(localStorage.getItem("chloeSweet16PreviewRsvps")||"[]");
+      saved.push(submission);localStorage.setItem("chloeSweet16PreviewRsvps",JSON.stringify(saved));
+      alert("Preview mode: this RSVP is only saved in this browser. Connect the Google Sheet endpoint before sharing the site.");
+    }
+    showPage("done");
+  }
+</script>
+</body>
+</html>
